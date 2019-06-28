@@ -16,7 +16,7 @@
   
   "entrypoints": {
     "main": [
-      "io.github.terraformersmc.blossom.Blossom"
+      "tk.valoeghese.blossom.Blossom"
     ]
   },
   
