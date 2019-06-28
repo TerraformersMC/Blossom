@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "blossom",
+  "version": "1.0.0",
+  
+  "name": "Blossom",
+  "description": "Adds some biomes to minecraft using the 1.14 fabric modloader",
+  "authors": [
+    "Valoeghese"
+  ],
+  
+  "license": "LGPL-3.0",
+  "icon": "assets/blossom/icon.png",
+  
+  "environment": "*",
+  
+  "entrypoints": {
+    "main": [
+      "io.github.terraformersmc.blossom.Blossom"
+    ]
+  },
+  
+  "requires": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*",
+    "valarlib": ">=1.1.1",
+    "terraform": "*"
+  },
+  
+  "mixins": [
+     "fabricbiomes.mixins.json"
+  ]
+}
