@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import tk.valoeghese.blossom.init.BlossomBlocks;
 import tk.valoeghese.blossom.init.BlossomFeatures;
 
 public class TropicalIslandShoreBiome extends ExtendedBiome
@@ -16,8 +17,8 @@ public class TropicalIslandShoreBiome extends ExtendedBiome
 	{
 		super(BiomeFactory.create(0.025F, 0.025F, Biome.Category.BEACH).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131));
 
-		this.setTopBlock(Blocks.SAND.getDefaultState());
-		this.setFillerBlock(Blocks.SAND.getDefaultState());
+		this.setTopBlock(BlossomBlocks.TROPICAL_SAND.getDefaultState());
+		this.setFillerBlock(BlossomBlocks.TROPICAL_SAND.getDefaultState());
 		this.setUnderwaterBlock(Blocks.SAND.getDefaultState());
 		
 		this.factory.addDefaultGeneration();
