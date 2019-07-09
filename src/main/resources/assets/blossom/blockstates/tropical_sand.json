@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "tropical:block/tropical_sand" }
+    "": { "model": "blossom:block/tropical_sand" }
   }
 }

@@ -1,3 +1,7 @@
 {
-  "blossom.tropical_sand": "Tropical Sand"
+  "block.blossom.tropical_sand": "Tropical Sand",
+  "biome.blossom.tropical_island": "Tropical Island",
+  "biome.blossom.tropical_island_coast": "Tropical Island Coast",
+  "biome.blossom.tropical_reef": "Tropical Reef",
+  "biome.blossom.tropical_reef_edge": "Tropical Reef Edge"
 }

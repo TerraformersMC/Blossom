@@ -2,32 +2,29 @@ package tk.valoeghese.blossom.biome;
 
 import modfest.valar.common.biome.BiomeFactory;
 import modfest.valar.common.biome.ExtendedBiome;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.MineshaftFeature;
-import net.minecraft.world.gen.feature.MineshaftFeatureConfig;
 import net.minecraft.world.gen.feature.OceanRuinFeature;
 import net.minecraft.world.gen.feature.OceanRuinFeatureConfig;
 import net.minecraft.world.gen.feature.ShipwreckFeatureConfig;
+import tk.valoeghese.blossom.init.BlossomBiomes;
 
 public class TropicalReefBiome extends ExtendedBiome
 {
 
 	public TropicalReefBiome()
 	{
-		super(BiomeFactory.create(-0.5F, 0.01F, Biome.Category.OCEAN).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131));
+		super(BiomeFactory.create(-0.5F, 0.01F, Biome.Category.OCEAN).setSurfaceBuilder(BlossomBiomes.TROPICAL_BUILDER).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131));
 
-		this.setUnderwaterBlock(Blocks.SAND.getDefaultState());
+		//this.setUnderwaterBlock(Blocks.SAND.getDefaultState());
 
 		this.factory.addDefaultGeneration();
 		this.factory.addDefaultMineables();
 
 		this.addStructureFeature(Feature.OCEAN_RUIN, new OceanRuinFeatureConfig(OceanRuinFeature.BiomeType.WARM, 0.33F, 0.95F));
-		this.addStructureFeature(Feature.MINESHAFT, new MineshaftFeatureConfig(0.004D, MineshaftFeature.Type.NORMAL));
 		this.addStructureFeature(Feature.SHIPWRECK, new ShipwreckFeatureConfig(false));
 
 		DefaultBiomeFeatures.addDefaultFlowers(this);

@@ -6,44 +6,47 @@ import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OceanRuinFeature;
+import net.minecraft.world.gen.feature.OceanRuinFeatureConfig;
+import net.minecraft.world.gen.feature.ShipwreckFeatureConfig;
 import tk.valoeghese.blossom.init.BlossomBiomes;
-import tk.valoeghese.blossom.init.BlossomFeatures;
 
-public class TropicalIslandBiome extends ExtendedBiome
+public class TropicalReefEdgeBiome extends ExtendedBiome
 {
-	public TropicalIslandBiome()
+
+	public TropicalReefEdgeBiome()
 	{
-		super(BiomeFactory.create(0.2F, 0.26F, Biome.Category.FOREST).setSurfaceBuilder(BlossomBiomes.TROPICAL_BUILDER).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131).setBaseBiome("blossom:tropical_reef"));
-		
+		super(BiomeFactory.create(-1.5F, 0.01F, Biome.Category.OCEAN).setSurfaceBuilder(BlossomBiomes.TROPICAL_BUILDER).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131).setBaseBiome("blossom:tropical_reef"));
+
 		//this.setUnderwaterBlock(Blocks.SAND.getDefaultState());
-		
+
 		this.factory.addDefaultGeneration();
-		DefaultBiomeFeatures.addDefaultLakes(this);
 		this.factory.addDefaultMineables();
-		
-		this.populator.treesPerChunk = 2;
-		this.populator.addTreeFeature(BlossomFeatures.PALM, 1);
-		this.populator.addTreeFeature(BlossomFeatures.PALM_GRASSONLY, 1);
-		this.populator.buildTreeFeatures();
-		
+
+		this.addStructureFeature(Feature.OCEAN_RUIN, new OceanRuinFeatureConfig(OceanRuinFeature.BiomeType.WARM, 0.33F, 0.95F));
+		this.addStructureFeature(Feature.SHIPWRECK, new ShipwreckFeatureConfig(false));
+
 		DefaultBiomeFeatures.addDefaultFlowers(this);
 		DefaultBiomeFeatures.addDefaultGrass(this);
 		DefaultBiomeFeatures.addDefaultMushrooms(this);
 		DefaultBiomeFeatures.addDesertVegetation(this);
 		DefaultBiomeFeatures.addSprings(this);
 		DefaultBiomeFeatures.addFrozenTopLayer(this);
-		this.addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.RABBIT, 1, 2, 3));
-		this.addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.PARROT, 1, 2, 3));
-		this.addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntityType.CHICKEN, 5, 2, 5));
+
+		this.addSpawn(EntityCategory.WATER_CREATURE, new Biome.SpawnEntry(EntityType.SQUID, 9, 4, 4));
+		this.addSpawn(EntityCategory.WATER_CREATURE, new Biome.SpawnEntry(EntityType.PUFFERFISH, 18, 1, 3));
+		this.addSpawn(EntityCategory.WATER_CREATURE, new Biome.SpawnEntry(EntityType.TROPICAL_FISH, 26, 8, 8));
+		this.addSpawn(EntityCategory.WATER_CREATURE, new Biome.SpawnEntry(EntityType.DOLPHIN, 5, 1, 2));
 		this.addSpawn(EntityCategory.AMBIENT, new Biome.SpawnEntry(EntityType.BAT, 10, 8, 8));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.SPIDER, 100, 4, 4));
+		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.ZOMBIE, 95, 4, 4));
+		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.SKELETON, 100, 4, 4));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.CREEPER, 100, 4, 4));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.SLIME, 100, 4, 4));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.ENDERMAN, 10, 1, 4));
 		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.WITCH, 5, 1, 1));
-		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.ZOMBIE, 95, 4, 4));
-		this.addSpawn(EntityCategory.MONSTER, new Biome.SpawnEntry(EntityType.ZOMBIE_VILLAGER, 1, 1, 1));
 	}
 
 }

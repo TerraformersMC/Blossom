@@ -1,59 +1,22 @@
 package tk.valoeghese.blossom.gen;
 
 import java.util.Random;
-import java.util.Set;
 
 import modfest.valar.common.gen.AbstractTropicalTreeFeature;
 import modfest.valar.common.gen.BlockGenerator;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MutableIntBoundingBox;
-import net.minecraft.world.Heightmap;
 import net.minecraft.world.ModifiableTestableWorld;
-import net.minecraft.world.TestableWorld;
-import tk.valoeghese.blossom.init.BlossomBlocks;
 
-public class PalmFeature extends AbstractTropicalTreeFeature
+public class PalmFeature2 extends AbstractTropicalTreeFeature
 {
 	private static final BlockState LOG = Blocks.JUNGLE_LOG.getDefaultState();
 	private static final BlockState LEAVES = Blocks.OAK_LEAVES.getDefaultState();
 	
-	public PalmFeature()
+	public PalmFeature2()
 	{
 		super(false, 6, 9);
-	}
-	
-	@Override
-	protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld world, Random rand, BlockPos blockPos_1, MutableIntBoundingBox mutableIntBoundingBox)
-	{
-		int height = 6 + rand.nextInt(9);
-		
-		blockPos_1 = world.getTopPosition(Heightmap.Type.OCEAN_FLOOR, blockPos_1);
-
-		BlockGenerator generator = new BlockGenerator(world, set_1);
-		
-		if (blockPos_1.getY() >= 1 && blockPos_1.getY() + height + 1 <= 256 &&
-				(this.isTropicalSand(world, blockPos_1.down()) || (super.isNaturalDirtOrGrass(world, blockPos_1.down()))))
-		{
-			
-			this.generateBlocks(world, generator, height, rand, blockPos_1);
-			
-			return generator.generate(this);
-		}
-		else
-		{
-			return false;
-		}
-	}
-	
-	private boolean isTropicalSand(TestableWorld world, BlockPos down)
-	{
-		return world.testBlockState(down, (blockState_1) -> {
-			Block block_1 = blockState_1.getBlock();
-			return block_1 == BlossomBlocks.TROPICAL_SAND;
-		});
 	}
 	
 	@Override

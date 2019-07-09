@@ -2,33 +2,28 @@ package tk.valoeghese.blossom.biome;
 
 import modfest.valar.common.biome.BiomeFactory;
 import modfest.valar.common.biome.ExtendedBiome;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
-import tk.valoeghese.blossom.init.BlossomBlocks;
+import tk.valoeghese.blossom.init.BlossomBiomes;
 import tk.valoeghese.blossom.init.BlossomFeatures;
 
-public class TropicalIslandShoreBiome extends ExtendedBiome
+public class TropicalIslandCoastBiome extends ExtendedBiome
 {
-
-	public TropicalIslandShoreBiome()
+	public TropicalIslandCoastBiome()
 	{
-		super(BiomeFactory.create(0.025F, 0.025F, Biome.Category.BEACH).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131));
-
-		this.setTopBlock(BlossomBlocks.TROPICAL_SAND.getDefaultState());
-		this.setFillerBlock(BlossomBlocks.TROPICAL_SAND.getDefaultState());
-		this.setUnderwaterBlock(Blocks.SAND.getDefaultState());
+		super(BiomeFactory.create(0.025F, 0.025F, Biome.Category.BEACH).setSurfaceBuilder(BlossomBiomes.TROPICAL_BUILDER).setTemperatureDownfall(1.1F, 0.7F).setWaterProperties(4445678, 270131));
 		
 		this.factory.addDefaultGeneration();
 		DefaultBiomeFeatures.addDefaultLakes(this);
 		this.factory.addDefaultMineables();
 		
-		this.populator.treesPerChunk = 1;
+		this.populator.treesPerChunk = 2;
 		this.populator.extraTreeChance = 0.3F;
 		
 		this.populator.addTreeFeature(BlossomFeatures.PALM, 1);
+		this.populator.addTreeFeature(BlossomFeatures.PALM_GRASSONLY, 1);
 		
 		this.populator.buildTreeFeatures();
 		
