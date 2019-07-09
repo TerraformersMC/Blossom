@@ -26,13 +26,13 @@ public class PalmFeature extends AbstractTropicalTreeFeature
 	}
 	
 	@Override
-	protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld world, Random rand, BlockPos blockPos_1, MutableIntBoundingBox mutableIntBoundingBox)
+	protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld world, Random rand, BlockPos blockPos_1, MutableIntBoundingBox mibb)
 	{
 		int height = 6 + rand.nextInt(9);
 		
 		blockPos_1 = world.getTopPosition(Heightmap.Type.OCEAN_FLOOR, blockPos_1);
 
-		BlockGenerator generator = new BlockGenerator(world, set_1);
+		BlockGenerator generator = new BlockGenerator(world, set_1, mibb);
 		
 		if (blockPos_1.getY() >= 1 && blockPos_1.getY() + height + 1 <= 256 &&
 				(this.isTropicalSand(world, blockPos_1.down()) || (super.isNaturalDirtOrGrass(world, blockPos_1.down()))))

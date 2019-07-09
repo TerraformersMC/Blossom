@@ -5,6 +5,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 import tk.valoeghese.blossom.Blossom;
+import tk.valoeghese.blossom.biome.AspenWoodlandBiome;
 import tk.valoeghese.blossom.biome.TropicalIslandBiome;
 import tk.valoeghese.blossom.biome.TropicalIslandCoastBiome;
 import tk.valoeghese.blossom.biome.TropicalReefBiome;
@@ -19,18 +20,18 @@ public final class BlossomBiomes
 	public static ExtendedBiome TROPICAL_ISLAND_COAST;
 	public static ExtendedBiome TROPICAL_REEF;
 	public static ExtendedBiome TROPICAL_REEF_EDGE;
+	
+	public static ExtendedBiome ASPEN_WOODLAND;
 
 	public static void init()
 	{
-
 		TROPICAL_BUILDER = register(new TropicalSurfaceBuilder(), "tropical_builder");
-
 		TROPICAL_REEF = register(new TropicalReefBiome(), "tropical_reef");
-		
 		TROPICAL_REEF_EDGE = register(new TropicalReefEdgeBiome(), "tropical_reef_edge");
-		
 		TROPICAL_ISLAND = register(new TropicalIslandBiome(), "tropical_island");
 		TROPICAL_ISLAND_COAST = register(new TropicalIslandCoastBiome(), "tropical_island_coast");
+		
+		ASPEN_WOODLAND = register(new AspenWoodlandBiome(), "aspen_woodland");
 	}
 
 	private static ExtendedBiome register(ExtendedBiome biome, String id)

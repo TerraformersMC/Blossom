@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "blossom:block/tropical_sand"
+          "name": "blossom:tropical_sand"
         }
       ],
       "conditions": [

@@ -2,6 +2,7 @@ package tk.valoeghese.blossom.init;
 
 import io.github.terraformersmc.terraform.biomeapi.OverworldBiomesExt;
 import net.fabricmc.fabric.api.biomes.v1.OverworldBiomes;
+import net.fabricmc.fabric.api.biomes.v1.OverworldClimate;
 import net.minecraft.world.biome.Biomes;
 
 public final class BlossomGen
@@ -19,5 +20,8 @@ public final class BlossomGen
 		OverworldBiomes.setRiverBiome(BlossomBiomes.TROPICAL_ISLAND_COAST, null);
 		OverworldBiomes.setRiverBiome(BlossomBiomes.TROPICAL_REEF, null);
 		OverworldBiomes.setRiverBiome(BlossomBiomes.TROPICAL_REEF_EDGE, null);
+		
+		// Aspen Woodland
+		OverworldBiomes.addBaseBiome(BlossomBiomes.ASPEN_WOODLAND, OverworldClimate.COOL, 1);
 	}
 }
