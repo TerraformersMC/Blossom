@@ -1,5 +1,6 @@
 package tk.valoeghese.blossom.init;
 
+import io.github.terraformersmc.terraform.block.TerraformSaplingBlock;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -15,6 +16,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import tk.valoeghese.blossom.Blossom;
 import tk.valoeghese.blossom.block.FallingCustomBlock;
+import tk.valoeghese.blossom.gen.PalmFeature;
+import tk.valoeghese.blossom.util.BlossomSaplingBlock;
 
 public final class BlossomBlocks
 {
@@ -23,6 +26,7 @@ public final class BlossomBlocks
 	public static final Block PALM_WOOD = new LogBlock(MaterialColor.CYAN_TERRACOTTA, FabricBlockSettings.copy(Blocks.OAK_LOG).materialColor(MaterialColor.CYAN_TERRACOTTA).build());
 	public static final Block PALM_PLANKS = new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).materialColor(MaterialColor.WOOD).build());
 	public static final Block PALM_LEAVES = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).materialColor(MaterialColor.LIME).build());
+	public static final Block PALM_SAPLING = new BlossomSaplingBlock((rand) -> new PalmFeature());
 	
 	public static void init()
 	{
