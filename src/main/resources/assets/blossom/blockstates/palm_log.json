@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=x": { "model":  "blossom:block/palm_log", "x": 90, "y": 90 },
+	"axis=y": { "model":  "blossom:block/palm_log" },
+	"axis=z": { "model":  "blossom:block/palm_log", "x": 90 }
+  }
+}

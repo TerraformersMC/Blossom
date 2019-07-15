@@ -1,5 +1,10 @@
 {
   "block.blossom.tropical_sand": "Tropical Sand",
+  
+  "block.blossom.palm_log": "Palm Log",
+  "block.blossom.palm_wood": "Palm Wood",
+  "block.blossom.palm_planks": "Palm Planks",
+  
   "biome.blossom.tropical_island": "Tropical Island",
   "biome.blossom.tropical_island_coast": "Tropical Island Coast",
   "biome.blossom.tropical_reef": "Tropical Reef",

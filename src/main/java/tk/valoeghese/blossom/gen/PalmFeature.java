@@ -17,7 +17,7 @@ import tk.valoeghese.blossom.init.BlossomBlocks;
 
 public class PalmFeature extends AbstractTropicalTreeFeature
 {
-	private static final BlockState LOG = Blocks.JUNGLE_LOG.getDefaultState();
+	private static final BlockState LOG = BlossomBlocks.PALM_LOG.getDefaultState();
 	private static final BlockState LEAVES = Blocks.OAK_LEAVES.getDefaultState();
 	
 	public PalmFeature()

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "blossom:block/palm_log_top",
+    "side": "blossom:block/palm_log"
+  }
+}

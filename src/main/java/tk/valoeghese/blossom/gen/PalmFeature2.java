@@ -8,10 +8,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ModifiableTestableWorld;
+import tk.valoeghese.blossom.init.BlossomBlocks;
 
 public class PalmFeature2 extends AbstractTropicalTreeFeature
 {
-	private static final BlockState LOG = Blocks.JUNGLE_LOG.getDefaultState();
+	private static final BlockState LOG = BlossomBlocks.PALM_LOG.getDefaultState();
 	private static final BlockState LEAVES = Blocks.OAK_LEAVES.getDefaultState();
 	
 	public PalmFeature2()

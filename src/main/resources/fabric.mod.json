@@ -28,6 +28,6 @@
   },
   
   "mixins": [
-     "fabricbiomes.mixins.json"
+     "blossom.mixins.json"
   ]
 }

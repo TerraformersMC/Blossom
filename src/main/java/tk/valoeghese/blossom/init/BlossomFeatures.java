@@ -1,11 +1,11 @@
 package tk.valoeghese.blossom.init;
 
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.BirchTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import tk.valoeghese.blossom.Blossom;
-import tk.valoeghese.blossom.gen.AspenFeature;
 import tk.valoeghese.blossom.gen.PalmFeature;
 import tk.valoeghese.blossom.gen.PalmFeature2;
 
@@ -20,7 +20,7 @@ public final class BlossomFeatures
 	{
 		PALM = register(new PalmFeature(), "palm");
 		PALM_GRASSONLY = register(new PalmFeature2(), "palm2");
-		ASPEN = register(new AspenFeature(), "aspen");
+		ASPEN = Feature.BIRCH_TREE;
 	}
 	
 	private static <E extends FeatureConfig> Feature<E> register(Feature<E> feature, String id)
